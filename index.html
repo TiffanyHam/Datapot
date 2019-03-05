@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>DataPot AIS|Security Analysis,Visualization Platform,Big Data,Machine Learning,Visualization Platform,ztbrothers</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animation.css" />
+		<script src="js/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery_002.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.carousel-indicators li {
+				display: inline-block;
+				width: 50px;
+				height: 3px;
+				margin: 0;
+				text-indent: -999px;
+				cursor: pointer;
+				background-color: #696d6d;
+				border: none;
+				border-radius: none;
+			}
+			
+			.carousel-indicators .active {
+				width: 50px;
+				height: 3px;
+				margin: 0;
+				background-image: linear-gradient(to right, #27e6c0, #696d6d);
+			}
+			
+			.nav-tabs {
+				border-bottom: 1px solid #00a8a7;
+			}
+			
+			.nav-tabs>li.active>a,
+			.nav-tabs>li.active>a:hover,
+			.nav-tabs>li.active>a:focus {
+				color: #555;
+				cursor: default;
+				background-color: #fff;
+				border: 1px solid #00a8a7;
+				border-bottom-color: transparent;
+			}
+			
+			.aui-section-list ul li:first-child {
+				background: url(images/tab1.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li:nth-child(2) {
+				margin-left: 20px;
+				background: url(images/tab2.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li:nth-child(3) {
+				margin-left: 20px;
+				background: url(images/tab3.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li {
+				display: inline-block;
+				vertical-align: baseline;
+				zoom: 1;
+				vertical-align: top;
+				cursor: pointer;
+				border-radius: 10px;
+				width: 24%;
+				color: #fff;
+				font-size: 16px;
+				text-align: center;
+				line-height: 26px;
+				height: 120px;
+				font-weight: 800;
+				opacity: .5;
+				padding-top: 23px;
+			}
+			
+			.aui-section-list ul .on {
+				/*border-bottom: 4px solid #488bff;*/
+				opacity: 1;
+			}
+			/*.aui-section-info {
+				border-top: 1px solid #ececec;
+			}*/
+			
+			.aui-section-info ul {
+				padding: 30px 0;
+				display: none;
+			}
+			
+			.aui-main {
+				width: auto;
+				min-height: 50px;
+				margin: 0 auto;
+			}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+
+	<body>
+		<!--<div class="spinner">
+			<div class="rect1 "></div>
+			<div class="rect2 "></div>
+			<div class="rect3 "></div>
+			<div class="rect4 "></div>
+			<div class="rect5 "></div>
+		</div>-->
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+
+				<div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse">
+					<a class="logo pull-left" href="index.html">
+						<div class="top_nav_logo"></div>
+						<div class="top_nav_logo1"></div>
+					</a>
+					<!--菜单-->
+					<div class="menu_style">
+						<ul id="nav" class="clearfix nav">
+							<li class="nLi ac">
+								<a href="index.html">HOME</a>
+							</li>
+							<li class="nLi">
+								<a href="#">PRODUCTS</a>
+								<ul class="sub">
+									<li>
+										<a href="product/screenSystem.html">Big-Screen System</a>
+									</li>
+									<li>
+										<a href="product/detectionSystem.html">Threat Detection System</a>
+									</li>
+									<li>
+										<a href="product/indexSystem.html">Threat indicator scaling System</a>
+									</li>
+									<li>
+										<a href="product/flowSystem.html">Traffic Analysis System</a>
+									</li>
+									<li>
+										<a href="product/analysisSystem.html">Behavior Analysis System</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi">
+								<a href="#">SOLUTIONS</a>
+								<ul class="sub">
+									<li>
+										<a href="solute/architecture.html">Network security architecture</a>
+									</li>
+									<li>
+										<a href="solute/analysisPlatform.html">Intelligent Security Analysis</a>
+									</li>
+									<li>
+										<a href="solute/deploy.html">Security sensor deployment</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi">
+								<a href="service.html">SERVICES</a>
+							</li>
+							<li class="nLi">
+								<a href="#">ABOUT</a>
+								<ul class="sub" style="width: 122px;">
+									<li>
+										<a href="about.html">Company Profile</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact Us</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+						<script>
+							jQuery("#nav").slide({
+									type: "menu",
+									titCell: ".nLi",
+									targetCell: ".sub",
+									effect: "slideDown",
+									delayTime: 300,
+									triggerTime: 0
+								}
+
+							);
+						</script>
+						<div class="exchange"><span><a href="Ch/index.html">中文</a></span>|<span><a href="#">English</a></span></div>
+
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!--banner-->
+		<div class="banner">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+
+					<div class="ast_slider_wrapper">
+						<div class="ast_banner_text">
+							<div class="starfield">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="ast_waves">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+							<div class="ast_waves2">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+							<div class="ast_waves3">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+
+						</div>
+
+						<div class="space" style="position: absolute;top: 63%;left: 50%;transform: translate(-50%,-50%);">
+							<div class="container">
+								<div class="row">
+
+									<div class="col-md-6 text-center fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+										<img src="images/img_01.png" width="330">
+									</div>
+									<div class="col-md-6 text-center fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+										<h2>Datapot Real-Time Big Data Network Security Analysis Visualization Platform</h2>
+										<p class="tx"><span>Professional</span>|<span>Safe</span>|<span>Reliable</span></p>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--概述-->
+		<div class="honor padT80 padB80 greyBg">
+			<div class="container">
+				<!--<section class="title">
+					<h2>概述&nbsp;/&nbsp;<span>Summary</span></h2>
+				</section>-->
+				<div class="row padT80">
+					<div class="col-sm-4 fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+						<div class="honty" style="text-align: center;">
+							<div>
+								<img src="images/in01.png" width="20%" />
+								<div class="tycon">
+									<h3>AWARENESS</h3>
+								</div>
+							</div>
+							<p>Current<br>Current network security situation awareness</p>
+						</div>
+					</div>
+					<div class="col-sm-4 fadeInLeft animated">
+						<div class="honty" style="text-align: center;" style="visibility: visible; animation-name: fadeInLeft;">
+							<div>
+								<img src="images/in02.png" width="20%" />
+								<div class="tycon">
+									<h3>ORIGIN</h3>
+								</div>
+							</div>
+							<p>Past<br>Investigation of the security events <br /> in the past</p>
+						</div>
+					</div>
+					<div class="col-sm-4 fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+						<div class="honty" style="text-align: center;">
+							<div>
+								<img src="images/in03.png" width="20%" />
+								<div class="tycon">
+									<h3>WARNING</h3>
+								</div>
+							</div>
+							<p>Future<br>Prediction of the potential threats</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--service-->
+		<div class="advantage padB80 greyBg">
+			<div class="container">
+				<section class="title">
+					<h2>Functional Benefits</h2>
+				</section>
+				<ul class="row padT80 padB80">
+					<li class="col-sm-4 col-xs-12">
+						<span>01</span>
+						<div>
+							<h3>Continuous Monitoring</h3>
+							<ul class="mg-t5">
+								<li>✓ Historical trace</li>
+								<li>
+									<!--✦-->✓ East-West, North-South traffic</li>
+								<li>
+									<!--✧-->✓ States of various assets</li>
+							</ul>
+
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12">
+						<span>02</span>
+						<div>
+							<h3>Real-time Monitoring</h3>
+							<ul class="mg-t5">
+								<li>✓ Behavioral study</li>
+								<li>✓ Temporal correlation</li>
+								<li>✓ Event correlation</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12">
+						<span>03</span>
+						<div>
+							<h3>Artificial Intelligence</h3>
+							<ul class="mg-t5">
+								<li>✓ Machine learning</li>
+								<li>✓ Data training</li>
+								<li>✓ Event prediction</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>04</span>
+						<div>
+							<h3>Risk Assessment</h3>
+							<ul class="mg-t5">
+								<li>✓ Quantitative display</li>
+								<li>✓ Data optimization</li>
+								<li>✓ Centralized processing</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>05</span>
+						<div>
+							<h3>Visualization</h3>
+							<ul class="mg-t5">
+								<li>✓ Clean design</li>
+								<li>✓ Detailed display</li>
+								<li>✓ Awareness display</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>06</span>
+						<div>
+							<h3>Big Data Platform</h3>
+							<ul class="mg-t5">
+								<li>✓ Massive data</li>
+								<li>✓ Sample optimization</li>
+								<li>✓ Data mining</li>
+							</ul>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+
+		<!--特色价值-->
+		<div class="container padB80">
+			<section class="title padB80">
+				<h2>Characteristic Value</h2>
+			</section>
+
+			<div class="aui-main">
+
+				<div class="aui-section-tab">
+					<div class="hd aui-section-list t_center">
+						<ul>
+							<li class="">Behavior-based application insight and zero trust strategy</li>
+							<li class="">Use behavioral analysis to make the right operational decisions</li>
+							<li class="">Help companies get the maximum value</li>
+
+						</ul>
+					</div>
+					<div class="bd aui-section-info">
+						<ul style="display: none;">
+							<li>
+								<div class="row padB80 services detection">
+									<div class="col-sm-12">
+										<p>Data center traffic is primarily in East-West traffic. In the meanwhile, the requirements of the rapid application deployment and mobility have been the challenges for the data center operations. The new Datapot Real-Time Big Data Network Security Analytics Visualization Platform uses machine learning, behavioral analysis and algorithms to provide comprehensive visibility and accurate identification of applications running in the data center and their dependencies:</p>
+									</div>
+									<div class="clearfix padT20 padB20">
+
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_blue">
+												<h3 class="e_blue">01</h3>
+												<p>Migrate applications from an existing legacy infrastructure to a programmable infrastructure;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_green">
+												<h3 class="e_green">02</h3>
+												<p>Keep your infrastructure up-to-date to ensure disaster recovery;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_black">
+												<h3 class="e_black">03</h3>
+												<p>Establish and deploy a consistent, accurate, and secure whitelisting strategy model;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content  d_gray">
+												<h3 class="e_gray">04</h3>
+												<p>Monitor the application's network policy compliance and identify any violations.</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</li>
+						</ul>
+						<ul style="display: none;">
+							<li>
+								<div class="content-first pd-b25 mg-t20 ">
+									<div class="container">
+										<div class="row detection">
+											<p class="hl25 padB80">The Datapot platform is different from any other platform in the industry. It is a ready-to-use platform with advanced management capabilities that requires minimal configuration and is quick to deploy. Its machine learning capabilities significantly reduce the manual effort required to get the related information. In addition, its self-monitoring and self-diagnostics capabilities eliminate the big data expertise required to operate a cluster.</p>
+											<div class="col-xs-12 col-sm-6">
+												<h3 class="title mg-t20 mg-b30 col-xs-12 img-first "><img src="images/archi10.png" width="90%"></h3>
+											</div>
+											<div class="col-xs-12 col-sm-6">
+												<div class="article-main clear-both" style="line-height:30px; text-align:left;">
+													<p><b>Application Insights:</b>Machine learning can be used to discover different applications and their communications in the data center. It automatically identifies and groups the different components, and generates the accurate dependency graphs.</p>
+													<p><b>Policy recommendations:</b>Policies can be generated for application layers and exported to other applications.</p>
+													<p><b>Strategy Analysis:</b>Supports the “try before use” mode, which performs simulation and impact analysis before applying the whitelisting strategy to the production environment.</p>
+													<p><b>Compliance Audit:</b>Monitors network policy compliance for application components. Any violation of the policy can be detected within a few minutes and a violation notification can be triggered.</p>
+													<p><b>Visibility, troubleshooting, and investigation:</b>Comprehensive traffic data can be collected and stored. Through the query, the visibility of the entire data center can be obtained. And the analysis and troubleshooting of the entire data center are also possible.</p>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</li>
+						</ul>
+						<ul style="display: none;">
+							<li>
+								<div class="row padB80 services detection">
+									<div class="col-sm-12">
+										<p>The supported services include:</p>
+									</div>
+									<div class="clearfix padB80">
+
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_blue">
+												<h3 class="e_blue">01</h3>
+												<p>Integrate the Datapot platform into a production data center environment;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_green">
+												<h3 class="e_green">02</h3>
+												<p>Define use SERVICES related to business objectives;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_black">
+												<h3 class="e_black">03</h3>
+												<p>Adjusting machine learning;</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_gray">
+												<h3 class="e_gray">04</h3>
+												<p>Verify strategy and compliance so as to improve application performance and operation efficiency.</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-sm-12">
+										<p>Solution support for Datapot includes hardware, software, and solution level support. All support needs can be met with a one-year contract. With the expertise provided by Datapot Platform Services, you'll be able to realize value faster, apply the platform to your entire environment, optimize your strategy and application performance, and get full support across your entire solution.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<footer>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">HOME</a>
+					</li>
+					<li>
+						<a href="product/screenSystem.html">PRODUCTS</a>
+					</li>
+					<li>
+						<a href="solute/architecture.html">SOLUTIONS</a>
+					</li>
+					<li>
+						<a href="service.html">SERVICES</a>
+					</li>
+					<li>
+						<a href="about.html">ABOUT</a>
+					</li>
+				</ul>
+			</nav>
+			<p>
+				<span class="glyphicon glyphicon-phone-alt"></span>0755-82773373
+				<span class="glyphicon glyphicon-envelope"></span>info@ztbrothers.com
+				<span class="glyphicon glyphicon-map-marker"></span> 6/F, Building A7, Nanshan Zhiyuan, No. 1001 Xueyuan Avenue, Nanshan District, Shenzhen, GuangDong, China
+			</p>
+			<p>Copyright @ 2018 ztbrothers.com All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤ICP备18029428号</p>
+
+		</footer>
+	</body>
+	<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*tab切换*/
+		jQuery(".aui-section-tab").slide({
+			effect: "fade",
+			autoPlay: false,
+			trigger: "mouseover",
+			delayTime: 500
+		});
+
+		$(function() {
+
+			$(".i-process .btn").eq(0).addClass("cur")
+
+			var LightNum = 0,
+				LightAuto = setInterval(function() {
+
+					LightNum++;
+
+					if(LightNum == $(".i-process .btn").length) {
+
+						LightNum = 0
+
+					}
+
+					$(".i-process .btn").eq(LightNum).addClass("cur").siblings().removeClass("cur")
+
+				}, 2500);
+
+		});
+		$(function() {
+
+			$('.banner-contorl li').on('click', function() {
+
+				var index = $(this).index();
+
+				change(index, 'ctrl');
+
+			});
+
+		});
+	</script>
+
+</html>

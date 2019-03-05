@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>神灯数据|DataPot AIS智能安全分析平台,大数据Big Data,机器学习,态势感知,众泰兄弟</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animation.css" />
+		<script src="js/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery_002.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.carousel-indicators li {
+				display: inline-block;
+				width: 50px;
+				height: 3px;
+				margin: 0;
+				text-indent: -999px;
+				cursor: pointer;
+				background-color: #696d6d;
+				border: none;
+				border-radius: none;
+			}
+			
+			.carousel-indicators .active {
+				width: 50px;
+				height: 3px;
+				margin: 0;
+				background-image: linear-gradient(to right, #27e6c0, #696d6d);
+			}
+			
+			.nav-tabs {
+				border-bottom: 1px solid #00a8a7;
+			}
+			
+			.nav-tabs>li.active>a,
+			.nav-tabs>li.active>a:hover,
+			.nav-tabs>li.active>a:focus {
+				color: #555;
+				cursor: default;
+				background-color: #fff;
+				border: 1px solid #00a8a7;
+				border-bottom-color: transparent;
+			}
+			
+			.aui-section-list ul li:first-child {
+				background: url(images/tab1.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li:nth-child(2) {
+				margin-left: 20px;
+				background: url(images/tab2.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li:nth-child(3) {
+				margin-left: 20px;
+				background: url(images/tab3.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			.aui-section-list ul li {
+				display: inline-block;
+				vertical-align: baseline;
+				zoom: 1;
+				vertical-align: top;
+				cursor: pointer;
+				border-radius: 10px;
+				width: 24%;
+				color: #fff;
+				font-size: 16px;
+				text-align: center;
+				line-height: 120px;
+				height: 120px;
+				font-weight: 800;
+				opacity: .5;
+			}
+			
+			.aui-section-list ul .on {
+				/*border-bottom: 4px solid #488bff;*/
+				opacity: 1;
+			}
+			/*.aui-section-info {
+				border-top: 1px solid #ececec;
+			}*/
+			
+			.aui-section-info ul {
+				padding: 30px 0;
+				display: none;
+			}
+			
+			.aui-main {
+				width: auto;
+				min-height: 50px;
+				margin: 0 auto;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<!--<div class="spinner">
+			<div class="rect1 "></div>
+			<div class="rect2 "></div>
+			<div class="rect3 "></div>
+			<div class="rect4 "></div>
+			<div class="rect5 "></div>
+		</div>-->
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+
+				<div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse">
+					<a class="logo pull-left" href="index.html">
+						<div class="top_nav_logo"></div>
+						<div class="top_nav_logo1"></div>
+					</a>
+					<!--菜单-->
+					<div class="menu_style">
+						<ul id="nav" class="clearfix nav">
+							<li class="nLi ac">
+								<a href="index.html">首页</a>
+							</li>
+							<li class="nLi">
+								<a href="#">产品介绍</a>
+								<ul class="sub">
+									<li>
+										<a href="product/screenSystem.html">DataPot大屏系统</a>
+									</li>
+									<li>
+										<a href="product/detectionSystem.html">DataPot威胁检测系统</a>
+									</li>
+									<li>
+										<a href="product/indexSystem.html">威胁量化指标系统</a>
+									</li>
+									<li>
+										<a href="product/flowSystem.html">DataPot流量分析系统</a>
+									</li>
+									<li>
+										<a href="product/analysisSystem.html">DataPot行为分析系统</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi">
+								<a href="#">解决方案</a>
+								<ul class="sub">
+									<li>
+										<a href="solute/architecture.html">AI+S网络安全架构</a>
+									</li>
+									<li>
+										<a href="solute/analysisPlatform.html">AIS智能安全分析平台</a>
+									</li>
+									<li>
+										<a href="solute/deploy.html">安全探针部署</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi">
+								<a href="service.html">服务案例</a>
+							</li>
+							<li class="nLi">
+								<a href="#">关于我们</a>
+								<ul class="sub" style="width: 122px;">
+									<li>
+										<a href="about.html">公司简介</a>
+									</li>
+									<li>
+										<a href="contact.html">联系我们</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+						<script>
+							jQuery("#nav").slide({
+									type: "menu",
+									titCell: ".nLi",
+									targetCell: ".sub",
+									effect: "slideDown",
+									delayTime: 300,
+									triggerTime: 0
+								}
+
+							);
+						</script>
+						<div class="exchange"><span><a href="#">中文</a></span>|<span><a href="../index.html">English</a></span></div>
+
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!--banner-->
+		<div class="banner">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+
+					<div class="ast_slider_wrapper">
+						<div class="ast_banner_text">
+							<div class="starfield">
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+							<div class="ast_waves">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+							<div class="ast_waves2">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+							<div class="ast_waves3">
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+								<div class="ast_wave"></div>
+							</div>
+
+						</div>
+
+						<div class="space" style="position: absolute;top: 63%;left: 50%;transform: translate(-50%,-50%);">
+							<div class="container">
+								<div class="row">
+
+									<div class="col-md-6 text-center fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+										<img src="images/img_01.png" width="330">
+									</div>
+									<div class="col-md-6 text-center fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+										<h2>DataPot实时大数据的网络安全分析<br>可视化平台</h2>
+										<p class="tx"><span>专业</span>|<span>安全</span>|<span>可靠</span></p>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--概述-->
+		<div class="honor padT80 padB80 greyBg">
+			<div class="container">
+				<!--<section class="title">
+					<h2>概述&nbsp;/&nbsp;<span>Summary</span></h2>
+				</section>-->
+				<div class="row padT80">
+					<div class="col-sm-4 fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
+						<div class="honty" style="text-align: center;">
+							<div>
+								<img src="images/in01.png" width="20%" />
+								<div class="tycon">
+									<h3>感知</h3>
+									<p>AWARENESS</p>
+								</div>
+							</div>
+							<p>感知现在<br>掌握当前安全态势</p>
+						</div>
+					</div>
+					<div class="col-sm-4 fadeInLeft animated">
+						<div class="honty" style="text-align: center;" style="visibility: visible; animation-name: fadeInLeft;">
+							<div>
+								<img src="images/in02.png" width="20%" />
+								<div class="tycon">
+									<h3>溯源</h3>
+									<p>ORIGIN </p>
+								</div>
+							</div>
+							<p>调查过去<br>追求安全事件真凶</p>
+						</div>
+					</div>
+					<div class="col-sm-4 fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+						<div class="honty" style="text-align: center;">
+							<div>
+								<img src="images/in03.png" width="20%" />
+								<div class="tycon">
+									<h3>预警</h3>
+									<p>WARNING</p>
+								</div>
+							</div>
+							<p>预警未来<br>预警未来威胁隐患</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--service-->
+		<div class="advantage padB80 greyBg">
+			<div class="container">
+				<section class="title">
+					<h2>功能优势&nbsp;/&nbsp;<span>Functional Benefits</span></h2>
+				</section>
+				<ul class="row padT80 padB80">
+					<li class="col-sm-4 col-xs-12">
+						<span>01</span>
+						<div>
+							<h3>持续监控</h3>
+							<ul class="mg-t5">
+								<li>✓ 历史追溯</li>
+								<li>
+									<!--✦-->✓ 东西、南北流量</li>
+								<li>
+									<!--✧-->✓ 各类资产状况</li>
+							</ul>
+
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12">
+						<span>02</span>
+						<div>
+							<h3>实时检测</h3>
+							<ul class="mg-t5">
+								<li>✓ 行为检测</li>
+								<li>✓ 随时关联</li>
+								<li>✓ 事件匹配</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12">
+						<span>03</span>
+						<div>
+							<h3>人工智能升级</h3>
+							<ul class="mg-t5">
+								<li>✓ 机器学习</li>
+								<li>✓ 训练升级</li>
+								<li>✓ 预测未来</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>04</span>
+						<div>
+							<h3>危险等级划分</h3>
+							<ul class="mg-t5">
+								<li>✓ 量化展示</li>
+								<li>✓ 数据优化</li>
+								<li>✓ 集中处理</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>05</span>
+						<div>
+							<h3>可视化展示</h3>
+							<ul class="mg-t5">
+								<li>✓ 简洁面板</li>
+								<li>✓ 全面展示</li>
+								<li>✓ 态势呈现</li>
+							</ul>
+						</div>
+					</li>
+					<li class="col-sm-4 col-xs-12 padT20">
+						<span>06</span>
+						<div>
+							<h3>大数据系统</h3>
+							<ul class="mg-t5">
+								<li>✓ 海量数据</li>
+								<li>✓ 样本优化</li>
+								<li>✓ 深层挖掘</li>
+							</ul>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+
+		<!--<div class="container padB80">
+			<section class="title">
+				<h2>平台架构&nbsp;/&nbsp;<span>Platform Architecture</span></h2>
+			</section>
+
+			<div class="row platform padT80">
+
+				<div class="col-md-12 padT80 padB80">
+					<img src="images/archi04.png" width="100%" />
+				</div>
+				<div class="col-md-12 padT80 mg-t20">
+					<p>该平台通过使用在整个数据中心基础设施部署的硬件和软件传感器，支持区域部署。可提供综合而全面的信息，其中包括流和情景信息（例如进程详细信息）数据包内部变化的详细信息。</p>
+					<p>Datapot实时大数据的网络安全分析可视化平台由大数据技术支持，可接近实时地处理从传感器接收的综合遥测信息（最高每秒处理100万个唯一遥测事件）。该平台专用于 满足长期数据保留需求，能够从其数据湖中搜索数百亿条遥测记录，并在不到一秒内返回切实可行的分析数据。在部署方面，该平台可提供统包方案，从而消除企业内部对任何大数据专业知识的需求。
+					</p>
+				</div>
+			</div>
+		</div>-->
+
+		<!--特色价值-->
+		<div class="container padB80">
+			<section class="title padB80">
+				<h2>特色价值&nbsp;/&nbsp;<span>Characteristic Value</span></h2>
+			</section>
+
+			<div class="aui-main">
+
+				<div class="aui-section-tab">
+					<div class="hd aui-section-list t_center">
+						<ul>
+							<li class="">基于行为的应用洞察力和零信任策略</li>
+							<li class="">使用行为分析作出正确的运营决策</li>
+							<li class="">帮助企业获取最大价值</li>
+
+						</ul>
+					</div>
+					<div class="bd aui-section-info">
+						<ul style="display: none;">
+							<li>
+								<div class="row padB80 services detection">
+									<div class="col-sm-12">
+										<p>数据中心流量正在发展以东-西流量为主，同时，快速应用部署和应用移动性需求已成为常态，这些趋势都加剧了数据中心运营面临的挑战。新推出的Datapot实时大数据的网络安全分析可视化平台采用无人管理式机器学习、行为分析和算法，可提供全面的可视性，并准确识别数据中心运行的应用及其依赖关系，以及不同应用层间的基本策满足：</p>
+									</div>
+									<div class="clearfix padT20 padB20">
+
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_blue">
+												<h3 class="e_blue">01</h3>
+												<p>将应用从现有传统基础设施迁移到可编程基础设施；</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_green">
+												<h3 class="e_green">02</h3>
+												<p>使基础设施保持最新状态，以保障灾难恢复；</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_black">
+												<h3 class="e_black">03</h3>
+												<p>建立并部署一致、准确、安全的白名单策略模型；
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content  d_gray">
+												<h3 class="e_gray">04</h3>
+												<p>监控应用的网络策略合规性，并发现任何违反情况。
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</li>
+						</ul>
+						<ul style="display: none;">
+							<li>
+								<div class="content-first pd-b25 mg-t20 ">
+									<div class="container">
+										<div class="row detection">
+											<p class="hl25 padB80">Datapot平台不同于业内任何其他平台。它是一个具有高级管理功能的就绪型平台，只需进行极少的配置，部署十分快捷。它的机器学习功能可显著降低获取通信模式信息所需的手动工作。 此外，它的自我监控和自我诊断功能可消除为操作集群所需掌握的大数据专业知识。</p>
+											<div class="col-xs-12 col-sm-6">
+												<h3 class="title mg-t20 mg-b30 col-xs-12 img-first "><img src="images/archi10.png" width="90%"></h3>
+											</div>
+											<div class="col-xs-12 col-sm-6">
+												<div class="article-main clear-both" style="line-height:30px; text-align:left;">
+													<p><b>应用见解：</b>可通过机器学习发现数据中心的不同应用及其通信，自动识别应用组件集群并对其分组，并生成准确的应用依赖关系图。</p>
+													<p><b>策略建议：</b>可生成用于应用层之间的策略，且能导出至其他应用。</p>
+													<p><b>策略分析：</b>支持“先试后用”模式，即在将白名单策略应用于生产网络之前，先进行模拟和影响分析。</p>
+													<p><b>合规审计：</b>可监控应用组件的网络策略合规性。可在数分钟内检测到任何违反策略的情况，并触发违规通知。</p>
+													<p><b>可视性、故障排除和调查分析：</b>可以收集并存储全面的流量数据。通过查询可获得对整个数据中心的可视性，并实现对整个数据中心的调查分析及故障排除。</p>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+							</li>
+						</ul>
+						<ul style="display: none;">
+							<li>
+								<div class="row padB80 services detection">
+									<div class="col-sm-12">
+										<p>服务专家可以提供的支持包括：</p>
+									</div>
+									<div class="clearfix padB80">
+
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_blue">
+												<h3 class="e_blue">01</h3>
+												<p>将datapot平台集成到生产数据中心环境；</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6">
+											<div class="dete-content d_green">
+												<h3 class="e_green">02</h3>
+												<p>定义与业务目标相关的使用案例；</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_black">
+												<h3 class="e_black">03</h3>
+												<p>调整机器学习；</p>
+											</div>
+										</div>
+										<div class="col-md-3 col-sm-6 ">
+											<div class="dete-content d_gray">
+												<h3 class="e_gray">04</h3>
+												<p>验证策略和合规性，以提高应用性能和操作效率。</p>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-sm-12">
+										<p>适用于Datapot的解决方案支持包括硬件、软件和解决方案级别的支持。只需签订一年合同，即可满足所有支持需求。借助Datapot平台服务所提供的专业知识，您将能够更快实现价值， 将该平台应用到您的整个环境，实现策略和应用性能的优化，并获得涵盖整个解决方案的全面支持。</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<footer>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="product/screenSystem.html">产品介绍</a>
+					</li>
+					<li>
+						<a href="solute/architecture.html">解决方案</a>
+					</li>
+					<li>
+						<a href="service.html">服务案例</a>
+					</li>
+					<li>
+						<a href="about.html">关于我们</a>
+					</li>
+				</ul>
+			</nav>
+			<p>
+				<span class="glyphicon glyphicon-phone-alt"></span>0755-82773373
+				<span class="glyphicon glyphicon-envelope"></span>info@ztbrothers.com
+				<span class="glyphicon glyphicon-map-marker"></span>深圳市南山区学苑大道1001号南山智园A7栋6楼
+			</p>
+			<p>Copyright @ 2018 ztbrothers.com All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤ICP备18029428号</p>
+
+		</footer>
+	</body>
+	<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*tab切换*/
+		jQuery(".aui-section-tab").slide({
+			effect: "fade",
+			autoPlay: false,
+			trigger: "mouseover",
+			delayTime: 500
+		});
+
+		$(function() {
+
+			$(".i-process .btn").eq(0).addClass("cur")
+
+			var LightNum = 0,
+				LightAuto = setInterval(function() {
+
+					LightNum++;
+
+					if(LightNum == $(".i-process .btn").length) {
+
+						LightNum = 0
+
+					}
+
+					$(".i-process .btn").eq(LightNum).addClass("cur").siblings().removeClass("cur")
+
+				}, 2500);
+
+		});
+		$(function() {
+
+			$('.banner-contorl li').on('click', function() {
+
+				var index = $(this).index();
+
+				change(index, 'ctrl');
+
+			});
+
+		});
+	</script>
+
+</html>

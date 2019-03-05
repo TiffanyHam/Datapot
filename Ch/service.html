@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>服务案例|DataPot AIS智能安全分析平台,大数据Big Data,机器学习,态势感知,众泰兄弟</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animation.css" />
+		<script src="js/jquery-1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.cooperation_list {
+				position: relative;
+				margin: 0 -1.1rem 0 0;
+			}
+			
+			.cooperation_list .list_item {
+				float: left;
+				width: 1.52rem;
+				margin: 0 1.1rem 0 0;
+				cursor: pointer;
+			}
+			
+			.cooperation_list .list_item .list_item_pic {
+				position: relative;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .bg {
+				display: block;
+				-webkit-transition: all 0.5s;
+				-moz-transition: all 0.5s;
+				-ms-transition: all 0.5s;
+				-o-transition: all 0.5s;
+				transition: all 0.5s;
+				width: 1.5rem;
+				height: 1.25rem;
+				background: url("../images/step_pic.png") no-repeat;
+				margin: 0.26rem 0 0.26rem 0;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .coop_icon {
+				-webkit-transition: all 0.5s;
+				-moz-transition: all 0.5s;
+				-ms-transition: all 0.5s;
+				-o-transition: all 0.5s;
+				transition: all 0.5s;
+				width: 0.42rem;
+				height: 0.5rem;
+				position: absolute;
+				background: url("../images/cooperation_icon.png") 0 0 no-repeat;
+				left: 0.4rem;
+				top: 50%;
+				margin-top: -0.25rem;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .coop_icon2 {
+				background-position: 0 -60px;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .coop_icon3 {
+				background-position: 0 -120px;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .coop_icon4 {
+				background-position: 0 -180px;
+			}
+			
+			.cooperation_list .list_item .list_item_pic .coop_icon5 {
+				background-position: 0 -240px;
+			}
+			
+			.cooperation_list .list_item .step_dec {
+				text-align: center;
+				font-size: 14px;
+				color: #333;
+			}
+			
+			.cooperation_list .list_item .step_dec h3 {
+				color: #1a81d2;
+				font-size: 18px;
+				height: 0.3rem;
+			}
+			
+			.cooperation_list .list_item.active .list_item_pic .bg {
+				width: 1.5rem;
+				height: 1.5rem;
+				background: url("../images/step_pic_active.png") no-repeat;
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				transform: rotate(90deg);
+			}
+			
+			.cooperation_list .list_item.active .list_item_pic .coop_icon {
+				left: 50%;
+				margin-left: -0.1rem;
+				margin-top: -0.3rem;
+			}
+			
+			.cooperation_list:before {
+				content: "";
+				border-bottom: 1px dashed #e6e6e6;
+				position: absolute;
+				top: 0.9rem;
+				width: 12rem;
+				left: 0;
+			}
+		</style>
+
+		<script type="text/javascript">
+			//图片滚动 调用方法 imgscroll({speed: 30,amount: 1,dir: "up"});
+			$.fn.imgscroll = function(o) {
+				var defaults = {
+					speed: 30,
+					amount: 0,
+					width: 1,
+					dir: "left"
+				};
+				o = $.extend(defaults, o);
+
+				return this.each(function() {
+					var _li = $("li", this);
+					_li.parent().parent().css({
+						overflow: "hidden",
+						position: "relative"
+					}); //div
+					_li.parent().css({
+						margin: "0",
+						padding: "0",
+						overflow: "hidden",
+						position: "relative",
+						"list-style": "none"
+					}); //ul
+					_li.css({
+						position: "relative",
+						overflow: "hidden"
+					}); //li
+					if(o.dir == "left") _li.css({
+						float: "left"
+					});
+
+					//初始大小
+					var _li_size = 0;
+					for(var i = 0; i < _li.size(); i++)
+						_li_size += o.dir == "left" ? _li.eq(i).outerWidth(true) : _li.eq(i).outerHeight(true);
+
+					//循环所需要的元素
+					if(o.dir == "left") _li.parent().css({
+						width: (_li_size * 3) + "px"
+					});
+					_li.parent().empty().append(_li.clone()).append(_li.clone()).append(_li.clone());
+					_li = $("li", this);
+
+					//滚动
+					var _li_scroll = 0;
+
+					function goto() {
+						_li_scroll += o.width;
+						if(_li_scroll > _li_size) {
+							_li_scroll = 0;
+							_li.parent().css(o.dir == "left" ? {
+								left: -_li_scroll
+							} : {
+								top: -_li_scroll
+							});
+							_li_scroll += o.width;
+						}
+						_li.parent().animate(o.dir == "left" ? {
+							left: -_li_scroll
+						} : {
+							top: -_li_scroll
+						}, o.amount);
+					}
+
+					//开始
+					var move = setInterval(function() {
+						goto();
+					}, o.speed);
+					_li.parent().hover(function() {
+						clearInterval(move);
+					}, function() {
+						clearInterval(move);
+						move = setInterval(function() {
+							goto();
+						}, o.speed);
+					});
+				});
+			};
+		</script>
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+
+				<div class="collapse navbar-collapse clearfix" id="bs-example-navbar-collapse">
+					<!--logo-->
+					<a class="logo pull-left" href="index.html">
+						<div class="top_nav_logo"></div>
+						<div class="top_nav_logo1"></div>
+					</a>
+
+					<!--菜单-->
+					<div class="menu_style">
+						<ul id="nav" class="clearfix nav">
+							<li class="nLi">
+								<a href="index.html">首页</a>
+							</li>
+							<li class="nLi">
+								<a href="#">产品介绍</a>
+								<ul class="sub">
+									<li>
+										<a href="product/screenSystem.html">DataPot大屏系统</a>
+									</li>
+									<li>
+										<a href="product/detectionSystem.html">DataPot威胁检测系统</a>
+									</li>
+									<li>
+										<a href="product/indexSystem.html">威胁量化指标系统</a>
+									</li>
+									<li>
+										<a href="product/flowSystem.html">DataPot流量分析系统</a>
+									</li>
+									<li>
+										<a href="product/analysisSystem.html">DataPot行为分析系统</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi">
+								<a href="#">解决方案</a>
+								<ul class="sub">
+									<li>
+										<a href="solute/architecture.html">AI+S网络安全架构</a>
+									</li>
+									<li>
+										<a href="solute/analysisPlatform.html">AIS智能安全分析平台</a>
+									</li>
+									<li>
+										<a href="solute/deploy.html">安全探针部署</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nLi ac">
+								<a href="service.html">服务案例</a>
+							</li>
+							<li class="nLi">
+								<a href="#">关于我们</a>
+								<ul class="sub" style="width: 122px;">
+									<li>
+										<a href="about.html">公司简介</a>
+									</li>
+									<li>
+										<a href="contact.html">联系我们</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+						<script>
+							jQuery("#nav").slide({
+								type: "menu",
+								titCell: ".nLi",
+								targetCell: ".sub",
+								effect: "slideDown",
+								delayTime: 300,
+								triggerTime: 0
+							});
+						</script>
+						<div class="exchange"><span><a href="#">中文</a></span>|<span><a href="../index.html">English</a></span></div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+		<div class="serPg" style="text-align: center;">
+			<div class="banner" style="position: relative;">
+				<img src="images/img_018.jpg" height="400" width="100%">
+			</div>
+		</div>
+
+		<!--service-->
+		<div class="service padT80">
+			<div class="container">
+				<section class="title">
+					<h2>我们的服务&nbsp;/&nbsp;<span>Our Service</span></h2>
+				</section>
+
+				<ul class="row padT80 padB80 " style="text-align: center;">
+
+					<li class="col-sm-2 col-xs-12 ">
+						<img src="images/step1.png">
+						<p>将DataPot平台集成到生产数据中心环境</p>
+					</li>
+					<li class="col-sm-1 col-xs-12">
+						<img src="images/direct1.png" class="dire">
+					</li>
+					<li class="col-sm-2 col-xs-12">
+						<img src="images/step2.png">
+						<p>定义与业务目标相关的使用案例</p>
+					</li>
+					<li class="col-sm-1 col-xs-12">
+						<img src="images/direct1.png" class="dire">
+					</li>
+					<li class="col-sm-2 col-xs-12">
+						<img src="images/step3.png">
+						<p>调整机器学习</p>
+					</li>
+					<li class="col-sm-1 col-xs-12">
+						<img src="images/direct1.png" class="dire">
+					</li>
+					<li class="col-sm-2 col-xs-12">
+						<img src="images/step4.png">
+						<p>验证策略和合规性，以提高应用性能和操作效率</p>
+					</li>
+
+				</ul>
+				<div class="detection">
+					<p>Datapot AIS是一个大型数据网络安全应用程序框架，可以对各种各样的流量安全数据进行大规模的查看，以帮助安全运营中心快速检测和应对威胁。以极低成本有效的方式存储和组合广泛的业务数据与安全数据。</p>
+					<p>适用于DataPot的解决方案支持包括硬件、软件和解决方案级别的支持。只需签订一年合同，即可满足所有支持需求。借助DataPot平台服务所提供的专业知识，您将能够更快实现价值，将该平台应用到整个环境，实现策略和应用性能的优化，并获得涵盖整个解决方案的全面支持。</p>
+				</div>
+
+			</div>
+		</div>
+		<!--case-->
+		<div class="case padT80 padB80">
+			<div class="container">
+				<section class="title">
+					<h2>服务案例&nbsp;/&nbsp;<span>Case</span></h2>
+				</section>
+
+				<div class="scrollleft">
+					<ul>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case1.png">
+
+							</div>
+
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case2.png">
+
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case3.png">
+
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case4.png">
+
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case5.png">
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case6.gif">
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case7.png">
+							</div>
+						</li>
+						<li>
+							<div class="jump_imgs clearfix">
+								<img src="images/case8.png">
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+				<!--</ul>-->
+			</div>
+		</div>
+
+		</div>
+		<footer>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="product/screenSystem.html">产品介绍</a>
+					</li>
+					<li>
+						<a href="solute/architecture.html">解决方案</a>
+					</li>
+					<li>
+						<a href="service.html">服务案例</a>
+					</li>
+					<li>
+						<a href="about.html">关于我们</a>
+					</li>
+				</ul>
+			</nav>
+			<p>
+				<span class="glyphicon glyphicon-phone-alt"></span>0755-82773373
+				<span class="glyphicon glyphicon-envelope"></span>info@ztbrothers.com
+				<span class="glyphicon glyphicon-map-marker"></span>深圳市南山区学苑大道1001号南山智园A7栋6楼
+			</p>
+			<p>Copyright @ 2018 ztbrothers.com All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;粤ICP备18029428号</p>
+
+		</footer>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".scrollleft").imgscroll({
+					speed: 50, //图片滚动速度
+					amount: 0, //图片滚动过渡时间
+					width: 1, //图片滚动步数
+					dir: "left" // "left" 或 "up" 向左或向上滚动
+				});
+
+			});
+		</script>
+
+	</body>
+
+</html>
